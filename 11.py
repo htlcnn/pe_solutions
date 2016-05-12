@@ -49,3 +49,5 @@ for i in range(17):
             prod = max_sub_prod
 
 print(prod)
+
+# 70600674
