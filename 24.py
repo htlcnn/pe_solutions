@@ -1,13 +1,18 @@
+#!/usr/bin/env python3
 import itertools
 
 
-lst = list(range(10))
-count = 0
-for p in itertools.permutations(lst):
-    count += 1
-    if count == 10**6:
-        ret = ''.join([str(i) for i in p])
-        print(count, ret)
-        break
-        
-# 2783915460
+def solve(input_):
+    lst = list(range(10))
+    count = 0
+    for p in itertools.permutations(lst):
+        count += 1
+        if count == input_:
+            ret = ''.join([str(i) for i in p])
+            break
+
+    return ret
+
+if __name__ == '__main__':
+    input_ = 10**6
+    solve(input_)

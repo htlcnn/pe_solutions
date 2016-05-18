@@ -3,7 +3,33 @@
 import numpy as np
 
 
-array = '''\
+def solve(input_):
+    lst = [[i for i in row.split(' ')] for row in input_.split('\n')]
+
+    a1 = np.array(lst).astype(int)
+    first_sub = a1[0:4, 0:4]
+    prod = max(first_sub.prod(0))
+    for i in range(17):
+        for j in range(17):
+            sub_a = a1[i:i+4, j:j+4]
+            if 0 in sub_a:
+                continue
+            # column
+            max_col_prod = max(sub_a.prod(0))
+            # row
+            max_row_prod = max(sub_a.prod(1))
+            # diagonal
+            diag_prod = sub_a.diagonal().prod()
+            # reverse diagonal
+            reverse_diag_prod = np.flipud(sub_a).diagonal().prod()
+            max_sub_prod = max(max_col_prod, max_row_prod, diag_prod, reverse_diag_prod)
+
+            if max_sub_prod >= prod:
+                prod = max_sub_prod    
+    return prod
+
+if __name__ == '__main__':
+    input_ = '''\
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -24,30 +50,6 @@ array = '''\
 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'''
-
-lst = [[i for i in row.split(' ')] for row in array.split('\n')]
-
-a1 = np.array(lst).astype(int)
-first_sub = a1[0:4, 0:4]
-prod = max(first_sub.prod(0))
-for i in range(17):
-    for j in range(17):
-        sub_a = a1[i:i+4, j:j+4]
-        if 0 in sub_a:
-            continue
-        # column
-        max_col_prod = max(sub_a.prod(0))
-        # row
-        max_row_prod = max(sub_a.prod(1))
-        # diagonal
-        diag_prod = sub_a.diagonal().prod()
-        # reverse diagonal
-        reverse_diag_prod = np.flipud(sub_a).diagonal().prod()
-        max_sub_prod = max(max_col_prod, max_row_prod, diag_prod, reverse_diag_prod)
-
-        if max_sub_prod >= prod:
-            prod = max_sub_prod
-
-print(prod)
+    solve(input_)
 
 # 70600674

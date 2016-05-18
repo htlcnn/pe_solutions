@@ -2,8 +2,9 @@
 
 
 def solve(input_):
-    return sum([int(c) for c in str(input_)])
+   
+    return output
 
 if __name__ == '__main__':
-    input_ = 2**1000
+    input_ = ''
     solve(input_)
