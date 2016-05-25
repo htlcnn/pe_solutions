@@ -9,6 +9,7 @@ def is_prime(num):
             return False
     return ret
 
+
 def is_circular_prime(num):
     circular = []
     for idx, i in enumerate(str(num)):
@@ -17,6 +18,7 @@ def is_circular_prime(num):
         if not is_prime(int(i)):
             return False
     return True
+
 
 def solve(input_):
     circular_prime_count = 0

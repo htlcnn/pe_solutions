@@ -8,7 +8,6 @@ def solve(input_):
         while n % i == 0:
             n = n // i
         i = i + 1
-  
     return n
 
 if __name__ == '__main__':

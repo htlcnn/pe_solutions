@@ -22,10 +22,11 @@ def solve(input_):
             diag_prod = sub_a.diagonal().prod()
             # reverse diagonal
             reverse_diag_prod = np.flipud(sub_a).diagonal().prod()
-            max_sub_prod = max(max_col_prod, max_row_prod, diag_prod, reverse_diag_prod)
+            max_sub_prod = max(max_col_prod, max_row_prod,
+                               diag_prod, reverse_diag_prod)
 
             if max_sub_prod >= prod:
-                prod = max_sub_prod    
+                prod = max_sub_prod
     return prod
 
 if __name__ == '__main__':

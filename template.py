@@ -2,7 +2,7 @@
 
 
 def solve(input_):
-   
+
     return output
 
 if __name__ == '__main__':

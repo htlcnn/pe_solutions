@@ -4,6 +4,7 @@
 def spiral_sum(start, end, plus):
     return (sum(range(start, end+1, plus)) - start)
 
+
 def solve(input_):
     ret = 1
     for i in range(1, input_, 2):

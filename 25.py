@@ -7,6 +7,7 @@ def fib():  # generator
         a, b = b, a + b
         yield a
 
+
 def solve(input_):
     num = fib()
     count = 0

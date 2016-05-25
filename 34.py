@@ -7,6 +7,7 @@ def factorial(n):
         ret *= i
     return ret
 
+
 def solve(input_):
     fact = tuple([factorial(i) for i in range(10)])
     sum_ = 0

@@ -6,7 +6,8 @@ def fib():  # generator
     while True:
         a, b = b, a + b
         yield a
-    
+
+
 def solve(input_):
     num = fib()
     fib_sum = 0

@@ -4,7 +4,7 @@ from datetime import timedelta, date
 
 def solve(start, end):
     # weekday() of first_monday is 0 -> sunday is 6th weekday
-    first_monday = date(1900, 1, 1).weekday()
+    # first_monday = date(1900, 1, 1).weekday() -> 0
 
     sundays = 0
 
