@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
+from base import Problem
 
 
-def solve(input_):
-
-    return sum([i for i in range(1000) if i % 3 == 0 or i % 5 == 0])
+class Solution(Problem):
+    def solve(self, input_):
+        print('Solving problem {}'.format(self.number))
+        print('Result: {}'.format(sum([i for i in range(input_) if i % 3 == 0 or i % 5 == 0]))
+    
 
 if __name__ == '__main__':
-    input_ = 1000
-    solve(input_)
+    solution = Solution(1)
+    solution.solve(1000)
